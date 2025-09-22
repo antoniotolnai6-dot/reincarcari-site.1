@@ -1,0 +1,80 @@
+[index.html](https://github.com/user-attachments/files/22472492/index.html)
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reincarcari</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --text:#e6eef6;
+      --muted:#9fb3c7;
+      --glass: rgba(255,255,255,0.03);
+    }
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#071021 0%, #0b1530 100%);color:var(--text);}
+    .container{max-width:980px;margin:40px auto;padding:24px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px;}
+    h1{font-size:2.2rem;margin:0;color:var(--accent);letter-spacing:0.6px}
+    .subtitle{color:var(--muted);font-size:0.95rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:18px 0 28px;}
+    .card{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,0.03)}
+    .price{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--text);font-size:0.98rem}
+    footer{border-top:1px solid rgba(255,255,255,0.04);padding-top:18px;margin-top:22px;display:flex;flex-direction:column;gap:8px;align-items:center}
+    .links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .link-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--text);text-decoration:none;font-weight:600}
+    .note{color:var(--muted);font-size:0.9rem;margin-top:8px;text-align:center}
+    @media (max-width:520px){
+      header{flex-direction:column;align-items:flex-start;gap:8px}
+      .container{margin:18px;padding:16px}
+      .card img{height:150px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Reîncărcări</h1>
+        <div class="subtitle">Reîncărcare capsule vape — preț fix</div>
+      </div>
+      <div class="subtitle">10 lei per capsulă reîncărcată</div>
+    </header>
+
+    <main>
+      <section class="grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <img src="images/img1.jpg.jpeg" alt="img1">
+          <div class="price">19 lei pe 2 capsule reîncărcate</div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <img src="images/img2.jpg.webp" alt="img2">
+          <div class="price">27 lei pe 3 capsule reincarcate</div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <img src="images/img3.jpg.webp" alt="img3">
+          <div class="price">10 lei per capsulă reîncărcată</div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="note">Contactează-mă pe rețele sau sună la numărul de mai jos:</div>
+
+      <div class="links">
+        <a class="link-btn" href="https://www.tiktok.com/@tol._tony.__" target="_blank">TikTok: @tol._tony.__</a>
+        <a class="link-btn" href="https://www.instagram.com/tol._tony.__" target="_blank">Instagram: tol._tony.__</a>
+        <a class="link-btn" href="tel:0770895362">Sună: 0770895362</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
