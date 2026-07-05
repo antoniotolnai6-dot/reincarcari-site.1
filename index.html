@@ -1,86 +1,325 @@
-8<!doctype html>
+<!doctype html>
 <html lang="ro">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Reincarcari</title>
+  <title>Aparate și Reîncărcări</title>
+
   <style>
     :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#06b6d4;
-      --text:#e6eef6;
-      --muted:#9fb3c7;
-      --glass: rgba(255,255,255,0.03);
+      --bg:#1a0f00;
+      --card:#241200;
+      --accent:#ff7a00;
+      --text:#fff4e6;
+      --muted:#d8c3a8;
+      --glass: rgba(255,255,255,0.05);
     }
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#071021 0%, #0b1530 100%);color:var(--text);}
-    .container{max-width:980px;margin:40px auto;padding:24px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px;}
-    h1{font-size:2.2rem;margin:0;color:var(--accent);letter-spacing:0.6px}
-    .subtitle{color:var(--muted);font-size:0.95rem}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:18px 0 28px;}
-    .card{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
-    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,0.03)}
-    .price{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--text);font-size:0.98rem}
-    footer{border-top:1px solid rgba(255,255,255,0.04);padding-top:18px;margin-top:22px;display:flex;flex-direction:column;gap:8px;align-items:center}
-    .links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    .link-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--text);text-decoration:none;font-weight:600}
-    .note{color:var(--muted);font-size:0.9rem;margin-top:8px;text-align:center}
-    @media (max-width:520px){
-      header{flex-direction:column;align-items:flex-start;gap:8px}
-      .container{margin:18px;padding:16px}
-      .card img{height:150px}
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:Inter, system-ui, Arial, sans-serif;
+      background:linear-gradient(180deg,#1a0f00 0%, #2a1400 100%);
+      color:var(--text);
+    }
+
+    .container{
+      max-width:980px;
+      margin:40px auto;
+      padding:24px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:26px;
+    }
+
+    h1{
+      font-size:2.4rem;
+      margin:0;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    .subtitle{
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin:18px 0 28px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.6);
+      text-align:center;
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:8px;
+    }
+
+    .price{
+      background:var(--glass);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+    }
+
+    /* Arome */
+    .flavor-box{
+      display:none;
+      background:var(--card);
+      padding:20px;
+      border-radius:12px;
+      margin-top:20px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.6);
+    }
+
+    .flavor-title{
+      font-size:1.3rem;
+      color:var(--accent);
+      margin-bottom:16px;
+      font-weight:700;
+      text-align:center;
+    }
+
+    .flavors{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .flavor-btn{
+      background:var(--accent);
+      color:#fff;
+      padding:14px 20px;
+      border-radius:50px;
+      font-weight:700;
+      border:none;
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    .flavor-btn:hover{
+      background:#ff9a3a;
+      transform:scale(1.08);
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
       <div>
-        <h1>Reîncărcări</h1>
-        <div class="subtitle">Reîncărcare capsule vape — preț fix</div>
-      </div>
-      <div class="subtitle">Tranzactile se fac in stiks 
+        <h1>Aparate și Reîncărcări</h1>
+        <div class="subtitle">Pentru cumpărare contactați‑mă în privat</div>
       </div>
     </header>
 
     <main>
+      <!-- GRID CU 6 APARATE -->
       <section class="grid">
-        <!-- Card 1 -->
-        <article class="card">
-          <img src="images/img1.jpg.jpeg" alt="img1">
-          <div class="price">40 lei pe 5 capsule reincarcate</div>
+
+        <article class="card" onclick="showFlavors('capsule')">
+          <img src="images/img1.jpg.png">
+          <div class="price">Aparat cu capsule</div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="card">
-          <img src="images/img2.jpg.webp" alt="img2">
-          <div class="price">19 lei pe 2 capsule reincarcate </div>
+        <article class="card" onclick="showFlavors('reincarcabil')">
+          <img src="images/img2.jpg.png">
+          <div class="price">Aparat reîncărcabil</div>
         </article>
 
-        <!-- Card 3 -->
-        <article class="card">
-          <img src="images/img3.jpg.webp" alt="img3">
-          <div class="price">10 lei per capsulă reîncărcată</div>
+        <article class="card" onclick="showFlavors('capsula1k')">
+          <img src="images/img3.jpg.png">
+          <div class="price">Capsulă aparat 1k fumuri</div>
         </article>
+
+        <article class="card" onclick="showFlavors('800')">
+          <img src="images/img4.jpg.png">
+          <div class="price">Aparat 800 fumuri</div>
+        </article>
+
+        <article class="card" onclick="showFlavors('1000')">
+          <img src="images/img5.jpg.png">
+          <div class="price">Aparat 1000 fumuri</div>
+        </article>
+
+        <article class="card" onclick="showFlavors('veev')">
+          <img src="images/img6.jpg.webp">
+          <div class="price">Reîncărcări Veev fără nicotină</div>
+        </article>
+
       </section>
-    </main>
 
-    <footer>
-      <div class="note">Contactează-mă pe rețele sau sună la numărul de mai jos:</div>
-
-      <div class="links">
-        <a class="link-btn" href="https://www.tiktok.com/@tol._tony.__" target="_blank">Tiok: @tol._tony.__</a>
-        <a class="link-btn" href="https://www.instagram.com/tol._tony.__" target="_blank">Instagram: tol._tony.__</a>
-        <a class="link-btn" href="tel:0770895362">Sună: 0770895362</a>
+      <!-- AROME DINAMICE -->
+      <div id="flavorBox" class="flavor-box">
+        <div class="flavor-title">Arome disponibile</div>
+        <div id="flavorButtons" class="flavors"></div>
       </div>
-    </footer>
+    </main>
   </div>
+
+  <script>
+    function showFlavors(type){
+      const box = document.getElementById("flavorBox");
+      const buttons = document.getElementById("flavorButtons");
+
+      box.style.display = "block";
+      buttons.innerHTML = "";
+
+      let flavors = [];
+
+      if(type === "capsule"){
+        flavors = [
+          "strawberry ice cream — 50 lei",
+          "watermelon ice — 50 lei"
+        ];
+      }
+
+      if(type === "reincarcabil"){
+        flavors = [
+          "Grape Ice — 100 lei",
+          "Pineapple — 100 lei",
+          "Fizzy Lemonade — 100 lei"
+        ];
+      }
+      if(type === "capsula1k"){
+        flavors = [
+          "Cola Libre 1000 puffs — 18 lei",
+        "Banana Ice Cream 1000 puffs — 18 lei",
+        "Cool Spearmint 1000 puffs — 18 lei",
+        "Grape Ice 1000 puffs — 18 lei",
+        "Green Apple 1000 puffs — 18 lei",
+        "Latte Macchiato 1000 puffs — 18 lei",
+        "Mix Berry 1000 puffs — 18 lei",
+        "Peach Delight 1000 puffs — 18 lei",
+        "Premium Tobacco 1000 puffs — 18 lei",
+        "Strawberry IceCream 1000 puffs — 18 lei",
+        "Watermelon Ice 1000 puffs — 18 lei"
+        ];
+      }
+      if(type === "800"){
+        flavors = [
+          "Tobacco 800 puffs — 20 lei",
+          "Cola Libre 800 puffs — 20 lei",
+          "Aloe Grape 800 puffs — 20 lei",
+          "Apple Juice 800 puffs — 20 lei",
+          "Tropical Mango 800 puffs — 40 lei",
+          "Mix Berry 800 puffs — 40 lei",
+          "Bubblegum Ice 800 puffs — 40 lei",
+          "Strawberry Ice 800 puffs — 40 lei",
+          "Juicy Peach 800 puffs — 40 lei"
+
+         
+        ];
+      }
+      if(type === "1000"){
+        flavors = [
+          "Cucumber Mojito 1000 puffs — 17 lei",
+          "Gummy Berry 1000 puffs — 17 lei",
+          ",Pineapple Paradise 1000 puffs — 17 lei",
+          "Pineapple Paradise 1000 puffs — 17 lei",
+          "Lychee Rose 1000 puffs — 17 lei",
+          "Blood Orange 1000 puffs — 17 lei",
+          "Cola Ice 1000 puffs — 17 lei",
+          "Passion Guava 1000 puffs — 17 lei",
+          "Choco Bar 1000 puffs — 19 lei"
+        ];
+      }
+      // poți adăuga aici aromele pentru celelalte aparate
+
+      flavors.forEach(flavor => {
+        const btn = document.createElement("button");
+        btn.className = "flavor-btn";
+        btn.textContent = flavor;
+        buttons.appendChild(btn);
+      });
+
+      box.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+<style>
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 18px;
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .note {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .link-btn {
+    background: #ff7a00; /* portocaliu intens */
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  .link-btn:hover {
+    background: #ff9a3a; /* portocaliu mai deschis la hover */
+    transform: scale(1.08);
+  }
+</style>
+
+<footer>
+  <div class="note">Contactează‑mă pe rețele sau sună la numărul de mai jos:</div>
+
+  <div class="links">
+    <a class="link-btn" href="https://www.tiktok.com/@tol._tony.__" target="_blank">
+      TikTok: @tol._tony.__
+    </a>
+
+    <a class="link-btn" href="https://www.instagram.com/tol._tony.__" target="_blank">
+      Instagram: tol._tony.__
+    </a>
+
+    <a class="link-btn" href="tel:0770895362">
+      Sună: 0770895362
+    </a>
+  </div>
+</footer>
+
 </body>
 </html>
-
-
-
-
-
-
